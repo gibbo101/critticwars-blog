@@ -2,5 +2,15 @@
 
 {% block content %}
 
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            {% for Blog in blog_list %}
+            <p>{{ blog.title }}, {{ blog.author }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
