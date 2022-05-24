@@ -63,9 +63,8 @@ class BlogDetail(View):
 
 class BlogLike(View):
 
-    def blog(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         blog = get_object_or_404(Blog, slug=slug)
-
         if blog.likes.filter(id=request.user.id).exists():
             blog.likes.remove(request.user)
         else:
