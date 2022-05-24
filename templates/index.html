@@ -6,7 +6,7 @@
     <div class="col-12">
         <div class="row">
             {% for blog in blog_list %}
-            <p>{{ blog.title }}, {{ blog.author }}</p>
+            <p><a href="{%url 'blog' blog.slug %}">{{ blog.title }}</a>, {{ blog.author }}</p>
             {% endfor %}
         </div>
     </div>
