@@ -12,7 +12,7 @@
         <div class="row">
             {{ blog.content | safe }}
             {% if user.is_authenticated %}
-            <form action="" class="d-inline" action="{% url 'blog_like' blog.slug %}">
+            <form method="POST" class="d-inline" action="{% url 'blog_like' blog.slug %}">
                 {% csrf_token %}
                 <button type="submit" name="blog_id" value="{{blog.slug}}">Likes</button>
             </form>
