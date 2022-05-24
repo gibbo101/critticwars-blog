@@ -11,7 +11,7 @@ class BlogList(generic.ListView):
 
 class BlogDetail(View):
 
-    def get(self, slug, *args, **kwargs):
+    def get(self, request, slug, *args, **kwargs):
         queryset = Blog.objects
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.order_by('-created_on')
