@@ -23,17 +23,25 @@ A:active {
 
 A:hover {
     text-decoration: none;
-    color: red;
+    color: #ff0000;
 }
 
 nav {
     background-color: #363A43;
 }
 
-nav A:link {
-    text-decoration: none;
+.nav-link {
+    color: #44ABFF;
+}
+
+.nav-link:hover {
+    color: #ff0000;
 }
 
 .cwlogo {
     height: 2rem;
+}
+
+.cw-grey {
+    color: #cdcdcd;
 }
