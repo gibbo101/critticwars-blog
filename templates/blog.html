@@ -21,18 +21,20 @@
             Comment goes here
         </div>
     </div>
+    {% if user.is_authenticated %}
     <div class="col-12">
         <div class="row">
             Add Comment from {{ user.username }}
         </div>
         <div class="row">
-            <form action="post">
+            <form method="post">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
                 <button type="submit">Submit</button>
             </form>
         </div>
     </div>
+    {% endif %}
 </div>
 
 
