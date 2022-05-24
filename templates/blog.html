@@ -17,9 +17,12 @@
         <div class="row">
             Comments:
         </div>
+        {% for comment in comments %}
         <div class="row">
-            Comment goes here
+            <p>{{ comment.name }}</p>
+            {{ comment.content }}
         </div>
+        {% endfor %}
     </div>
     {% if user.is_authenticated %}
     <div class="col-12">
