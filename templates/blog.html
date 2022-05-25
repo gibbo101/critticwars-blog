@@ -1,54 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
 {% load crispy_forms_tags %}
 
-<div class="container">
-    <div class="col-12">
-        <div class="row">
-            {{ blog.title }}
-        </div>
-        <div class="row">
-            {{ blog.content | safe }}
-            {% if user.is_authenticated %}
-            <form method="POST" class="d-inline" action="{% url 'blog_like' blog.slug %}">
-                {% csrf_token %}
-                <button type="submit" name="blog_id" value="{{blog.slug}}">Likes</button>
-            </form>
-            {% else %}
-            Likes:
-            {% endif %}
-            {{ blog.number_of_likes }}
-            <p>Comments: </p>
-        </div>
-    </div>
-    <div class="col-12">
-        <div class="row">
-            Comments:
-        </div>
-        {% for comment in comments %}
-        <div class="row">
-            <p>{{ comment.name }}</p>
-            {{ comment.content }}
-        </div>
-        {% endfor %}
-    </div>
-    {% if user.is_authenticated %}
-    <div class="col-12">
-        <div class="row">
-            Add Comment from {{ user.username }}
-        </div>
-        <div class="row">
-            <form method="post">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit">Submit</button>
-            </form>
+<div class="container mt-3">
+    <div class="card blog-posts-container">
+        {% if "placeholder" in blog.image.url %}
+        <img class="card-img-top" src="{% static 'images/mainbanner.png' %}">
+        {% else %}
+        <img class="card-img-top" src="{{ blog.image.url }}">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ blog.title }}
+            </h5>
+
+            <p class="card-text">
+                {{ blog.content | safe }}
+                {% if user.is_authenticated %}
+                <form method="POST" class="d-inline" action="{% url 'blog_like' blog.slug %}">
+                    {% csrf_token %}
+                    <button type="submit" name="blog_id" value="{{blog.slug}}">Likes</button>
+                </form>
+                {% else %}
+                Likes:
+                {% endif %}
+                {{ blog.number_of_likes }}
+                # ofComments:
         </div>
     </div>
-    {% endif %}
-</div>
 
 
-{% endblock %}
+    <div class="card blog-posts-container mt-2">
+        <div class="card-body">
+            <h5 class="card-title">
+                Comments:
+            </h5>
+            <p class="card-text">
+                {% for comment in comments %}
+
+                <p>{{ comment.name }}</p>
+                <p>{{ comment.content }}</p>
+
+                {% endfor %}
+
+                {% if user.is_authenticated %}
+                <p>
+                    Add Comment from {{ user.username }}
+                </p>
+                <p>
+                    <form method="post">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit">Submit</button>
+                    </form>
+                </p>
+
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    {% endblock %}

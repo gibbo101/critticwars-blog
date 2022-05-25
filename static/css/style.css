@@ -123,3 +123,14 @@ nav {
     background-color: #990000;
     color: #cdcdcd;
 }
+
+/* Blog posts */
+
+.blog-posts-container {
+    background-color: #363A43;
+}
+
+.blog-image {
+    min-width: 100%;
+    padding: 0;
+}
