@@ -26,6 +26,9 @@ A:hover {
     color: #ff0000;
 }
 
+
+/* Navigation bar */
+
 nav {
     background-color: #363A43;
 }
@@ -44,4 +47,10 @@ nav {
 
 .cw-grey {
     color: #cdcdcd;
+}
+
+/* Main pages */
+
+.container {
+    background-color: #363A43;
 }
