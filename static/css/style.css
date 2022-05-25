@@ -1,6 +1,47 @@
 body {
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #363A43;
     background: url(../images/bg.webp) no-repeat center center;
     background-size: cover;
+    color: #cdcdcd;
+}
+
+A:link {
+    text-decoration: none;
+    color: #44ABFF;
+}
+
+A:visited {
+    text-decoration: none;
+    color: #44ABFF;
+}
+
+A:active {
+    text-decoration: none;
+    color: #44ABFF;
+}
+
+A:hover {
+    text-decoration: none;
+    color: #ff0000;
+}
+
+nav {
+    background-color: #363A43;
+}
+
+.nav-link {
+    color: #44ABFF;
+}
+
+.nav-link:hover {
+    color: #ff0000;
+}
+
+.cwlogo {
+    height: 2rem;
+}
+
+.cw-grey {
+    color: #cdcdcd;
 }
