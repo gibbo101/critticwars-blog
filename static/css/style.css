@@ -134,3 +134,10 @@ nav {
     min-width: 100%;
     padding: 0;
 }
+
+/* comments */
+
+.comments {
+    border: 2px solid #ccc;
+    background: #191B1C;
+}

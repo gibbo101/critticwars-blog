@@ -5,7 +5,7 @@
 
 {% load crispy_forms_tags %}
 
-<div class="container mt-3">
+<div class="container mt-3 mb-3">
     <div class="card blog-posts-container">
         {% if "placeholder" in blog.image.url %}
         <img class="card-img-top" src="{% static 'images/mainbanner.png' %}">
@@ -14,7 +14,9 @@
         {% endif %}
         <div class="card-body">
             <h5 class="card-title">
-                {{ blog.title }}
+                <div class="blog-title">
+                    {{blog.title}}
+                </div>
             </h5>
 
             <p class="card-text">
@@ -27,40 +29,71 @@
                 {% else %}
                 <i class="fas fa-heart"></i>
                 {% endif %}
-                {{ blog.number_of_likes }}
-                # ofComments:
+                {{ blog.number_of_likes }} |
+                {% with comments.count as total_comments %}
+                <i class="far fa-comments"></i> {{total_comments}}
+                {% endwith %}
         </div>
     </div>
 
-
+    {% if comments.count != 0 %}
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
             <h5 class="card-title">
-                Comments:
+                <div class="blog-title">
+                    Comments
+                </div>
             </h5>
             <p class="card-text">
                 {% for comment in comments %}
 
-                <p>{{ comment.name }}</p>
-                <p>{{ comment.content }}</p>
-
+                <div class="container comments mb-2">
+                    <div class="container comments mt-2">
+                        <div class="row m-1">
+                            Posted by {{ comment.name }}
+                        </div>
+                        <div class="row m-1">
+                            {{ comment.created_on }}
+                        </div>
+                    </div>
+                    <div class="container mt-2">
+                        <div class="row">
+                            <div class="col">
+                                <p>{{ comment.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
+            </p>
+        </div>
+    </div>
+    {% endif %}
 
+    <div class="card blog-posts-container mt-2">
+        <div class="card-body">
+            <h5 class="card-title">
+                <div class="blog-title">
+                    Add to the conversation
+                </div>
+            </h5>
+            <p class="card-text">
                 {% if user.is_authenticated %}
-                <p>
-                    Add Comment from {{ user.username }}
-                </p>
-                <p>
-                    <form method="post">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit">Submit</button>
-                    </form>
-                </p>
+
+                <form method="post">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit">Submit</button>
+                </form>
+
+                {% else %}
+                You must be logged in to make a post
 
                 {% endif %}
             </p>
         </div>
     </div>
+</div>
 
-    {% endblock %}
+
+{% endblock %}
