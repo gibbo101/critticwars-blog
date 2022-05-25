@@ -92,7 +92,7 @@ nav {
     font-style: italic;
 }
 
-.blog-author {
+.small-font {
     font-size: 0.8rem;
 }
 
@@ -122,4 +122,22 @@ nav {
 .page-link:hover {
     background-color: #990000;
     color: #cdcdcd;
+}
+
+/* Blog posts */
+
+.blog-posts-container {
+    background-color: #363A43;
+}
+
+.blog-image {
+    min-width: 100%;
+    padding: 0;
+}
+
+/* comments */
+
+.comments {
+    border: 2px solid #ccc;
+    background: #191B1C;
 }
