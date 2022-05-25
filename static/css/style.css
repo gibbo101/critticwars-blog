@@ -76,7 +76,7 @@ nav {
     position: absolute;
     width: 75%;
     height: 100%;
-    top: 0;
+    top: 10%;
     left: 0;
     padding-left: 2rem;
 }
@@ -84,16 +84,22 @@ nav {
 .blog-title {
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 1.5rem;
+}
+
+.blog-title-list {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .blog-excerpt {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
     font-style: italic;
 }
 
 .small-font {
-    font-size: 0.8rem;
+    font-size: 0.4rem;
 }
 
 
@@ -163,4 +169,75 @@ nav {
 .btn-cw:hover {
     color: #cdcdcd;
     background: purple;
+}
+
+/* media queries */
+
+@media (min-width: 576px) {
+
+    .blog-content {
+        top: 0;
+    }
+
+    .blog-title {
+        font-size: 1.5rem;
+    }
+
+    .blog-excerpt {
+        font-size: 0.6rem;
+    }
+
+    .small-font {
+        font-size: 0.4rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .blog-title {
+        font-size: 2rem;
+    }
+
+    .blog-excerpt {
+        font-size: 0.8rem;
+    }
+
+    .small-font {
+        font-size: 0.5rem;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+
+    .blog-title {
+        font-size: 2.5rem;
+    }
+
+    .blog-excerpt {
+        font-size: 1rem;
+    }
+
+    .small-font {
+        font-size: 0.7rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .blog-title {
+        font-size: 3rem;
+    }
+
+    .blog-excerpt {
+        font-size: 1.2rem;
+    }
+
+    .small-font {
+        font-size: 0.8rem;
+    }
+
 }
