@@ -139,5 +139,28 @@ nav {
 
 .comments {
     border: 2px solid #ccc;
-    background: #191B1C;
+    background: rgb(25, 27, 28);
+}
+
+/* Account login / register / logout */
+
+.accounts {
+    background: rgba(25, 27, 28, 0.7);
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.accounts-title {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+}
+
+.btn-cw {
+    color: #cdcdcd;
+    background: #9933cc;
+}
+
+.btn-cw:hover {
+    color: #cdcdcd;
+    background: purple;
 }
