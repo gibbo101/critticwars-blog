@@ -39,8 +39,8 @@ ALLOWED_HOSTS = ['critticwars-dev-blog.herokuapp.com', 'localhost']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
