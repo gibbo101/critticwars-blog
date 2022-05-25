@@ -1,29 +1,41 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+
+/* Remove default browser padding */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 body {
     height: 100vh;
     background-color: #363A43;
-    background: url(../images/bg.webp) no-repeat center center;
+    background: url(../images/bg.webp) no-repeat center fixed;
     background-size: cover;
     color: #cdcdcd;
 }
 
 A:link {
     text-decoration: none;
-    color: #44ABFF;
+    color: #cdcdcd;
 }
 
 A:visited {
     text-decoration: none;
-    color: #44ABFF;
+    color: #cdcdcd;
 }
 
 A:active {
     text-decoration: none;
-    color: #44ABFF;
+    color: #cdcdcd;
 }
 
 A:hover {
     text-decoration: none;
-    color: #ff0000;
+    color: #cdcdcd;
 }
 
 
@@ -51,6 +63,63 @@ nav {
 
 /* Main pages */
 
-.container {
-    background-color: #363A43;
+.blog {
+    position: relative;
+}
+
+.bg {
+    width: 100%;
+    display: block;
+}
+
+.blog-content {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 2rem;
+}
+
+.blog-title {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.blog-excerpt {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.blog-author {
+    font-size: 0.8rem;
+}
+
+
+.blog A:Link {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+
+.img-fluid {
+    min-width: 100%;
+}
+
+/* Pagination */
+
+.pagination-style {
+    background-color: #fff;
+    background: none;
+}
+
+.page-link {
+    background: #000;
+    color: #cdcdcd;
+}
+
+.page-link:hover {
+    background-color: #990000;
+    color: #cdcdcd;
 }
