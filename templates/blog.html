@@ -22,10 +22,10 @@
                 {% if user.is_authenticated %}
                 <form method="POST" class="d-inline" action="{% url 'blog_like' blog.slug %}">
                     {% csrf_token %}
-                    <button type="submit" name="blog_id" value="{{blog.slug}}">Likes</button>
+                    <button class="blog-posts-container cw-grey" type="submit" name="blog_id" value="{{blog.slug}}"><i class="fas fa-heart"></i></button>
                 </form>
                 {% else %}
-                Likes:
+                <i class="fas fa-heart"></i>
                 {% endif %}
                 {{ blog.number_of_likes }}
                 # ofComments:
