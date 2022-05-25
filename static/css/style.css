@@ -106,3 +106,10 @@ nav {
 .img-fluid {
     min-width: 100%;
 }
+
+/* Pagination */
+
+.pagination-style {
+    background-color: #fff;
+    background: none;
+}
