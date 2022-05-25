@@ -113,3 +113,13 @@ nav {
     background-color: #fff;
     background: none;
 }
+
+.page-link {
+    background: #000;
+    color: #cdcdcd;
+}
+
+.page-link:hover {
+    background-color: #990000;
+    color: #cdcdcd;
+}

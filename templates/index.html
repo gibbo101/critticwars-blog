@@ -2,8 +2,10 @@
 {% load static %}
 {% block content %}
 
+
+
 {% for blog in blog_list %}
-<div class="container mt-5 blog">
+<div class="container mt-3 blog">
     <a href="{% url 'blog' blog.slug %}">
         <img class="bg" src="{% static 'images/blog.png' %}" />
         <div class=" blog-content">
