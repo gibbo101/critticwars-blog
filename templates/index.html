@@ -2,7 +2,21 @@
 {% load static %}
 {% block content %}
 
+{% if is_paginated %}
+<div class="container">
+    <nav class="pagination-style" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link mt-2 me-2">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link mt-2 ms-2"> NEXT &raquo;</a></li>
 
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endif %}
 
 {% for blog in blog_list %}
 <div class="container mt-3 blog">
@@ -23,8 +37,8 @@
 </div>
 {% endfor %}
 
+{% if is_paginated %}
 <div class="container">
-    {% if is_paginated %}
     <nav class="pagination-style" aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
