@@ -12,6 +12,7 @@ class Blog(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
+    updated = models.BooleanField(default=False)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
 
