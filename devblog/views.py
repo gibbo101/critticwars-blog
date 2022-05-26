@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Blog, Comment
 from .forms import CommentForm
+import datetime
 
 class BlogList(generic.ListView):
     model = Blog
@@ -95,6 +96,7 @@ class CommentEdit(View):
 
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
+            comment.updated_on = datetime.datetime.now()
             comment.save()
         else:
             comment_form = CommentForm()
