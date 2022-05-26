@@ -97,6 +97,7 @@ class CommentEdit(View):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.updated_on = datetime.datetime.now()
+            comment.updated = True
             comment.save()
         else:
             comment_form = CommentForm()
