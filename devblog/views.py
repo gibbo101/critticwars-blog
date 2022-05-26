@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Blog
+from .models import Blog, Comment
 from .forms import CommentForm
 
 class BlogList(generic.ListView):
     model = Blog
-    querysey = Blog.objects.order_by('-created_on')
+    queryset = Blog.objects.order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 10
 
@@ -69,5 +69,34 @@ class BlogLike(View):
             blog.likes.remove(request.user)
         else:
             blog.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('blog', args=[slug]))
+
+
+class CommentEdit(View):
+
+    def get(self, request, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+
+        return render(
+            request,
+            "edit_comment.html",
+            {
+                "comment": comment,
+                "comment_form": CommentForm(instance=comment),
+            },
+        )
+
+    def post(self, request, slug, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.save()
+        else:
+            comment_form = CommentForm()
 
         return HttpResponseRedirect(reverse('blog', args=[slug]))

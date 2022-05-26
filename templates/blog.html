@@ -74,7 +74,7 @@
                             <div class="col">
                                 <p>{{ comment.content }}</p>
                                 {% if user.username == comment.name %}
-                                <p>Edit</p>
+                                <p><a href="{% url 'edit' comment.blog.slug comment.id %}">Edit {{comment.id}}, {{comment.blog.slug}}</a></p>
                                 {% endif %}
                             </div>
                         </div>
