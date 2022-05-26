@@ -73,6 +73,9 @@
                         <div class="row">
                             <div class="col">
                                 <p>{{ comment.content }}</p>
+                                {% if user.username == comment.name %}
+                                <p>Edit</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
