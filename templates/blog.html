@@ -72,9 +72,18 @@
                     <div class="container mt-2">
                         <div class="row">
                             <div class="col">
-                                <p>{{ comment.content }}</p>
+                                <p>
+                                    {{ comment.content }}
+                                    {% if comment.updated == True %}
+                                    <div class="text-end small-font">
+                                        Updated {{comment.updated_on}}
+                                    </div>
+                                    {% endif %}
+                                </p>
+
                                 {% if user.username == comment.name %}
-                                <p><a href="{% url 'edit' comment.blog.slug comment.id %}">Edit {{comment.id}}, {{comment.blog.slug}}</a></p>
+                                <p><a href="{% url 'edit' comment.blog.slug comment.id %}"><button class="btn btn-success btn-sm">Edit</button></a>
+                                    <a href="{% url 'edit' comment.blog.slug comment.id %}"><button class="btn btn-danger btn-sm">Delete</button></a></p>
                                 {% endif %}
                             </div>
                         </div>
