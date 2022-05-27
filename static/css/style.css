@@ -61,6 +61,16 @@ nav {
     color: #cdcdcd;
 }
 
+.nav-link:focus,
+.nav-link:hover {
+    color: #cdcdcd;
+}
+
+.dropdown-menu {
+    background: rgb(25, 27, 28);
+    color: #cdcdcd;
+}
+
 /* Main pages */
 
 .blog {
