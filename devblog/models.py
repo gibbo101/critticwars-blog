@@ -39,3 +39,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
+
+class CwUsers(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    cw_name = models.CharField(max_length=80)
+    cw_id = models.IntegerField()
