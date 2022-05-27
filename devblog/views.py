@@ -127,6 +127,6 @@ class CommentDelete(View):
 
         if comment:
             comment.delete()
-            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Comment Deleted'))
+            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Comment Deleted'))
         else:
-            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Error'))
+            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Error'))
