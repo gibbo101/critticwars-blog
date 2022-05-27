@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Comment
+from .models import Blog, Comment, CwUsers
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -17,3 +17,8 @@ class BlogAdmin(SummernoteModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('blog', 'name', 'content', 'created_on', 'updated_on',)
     list_filter = ('created_on','updated',)
+
+
+@admin.register(CwUsers)
+class CwUsersAdmin(admin.ModelAdmin):
+    list_display = ('user_id', 'cw_name', 'cw_id',)
