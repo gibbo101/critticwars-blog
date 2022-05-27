@@ -71,3 +71,57 @@ class BlogLike(View):
             blog.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('blog', args=[slug]))
+
+
+class CommentEdit(View):
+
+    def get(self, request, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+
+        return render(
+            request,
+            "edit_comment.html",
+            {
+                "comment": comment,
+                "comment_form": CommentForm(instance=comment),
+            },
+        )
+
+    def post(self, request, slug, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.updated_on = datetime.datetime.now()
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Comment Edited'))
+     
+class CommentDelete(View):
+
+    def get(self, request, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+
+        return render(
+            request,
+            "delete_comment.html",
+            {
+                "comment": comment,
+            },
+        )
+
+    def post(self, request, slug, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+
+        if comment:
+            comment.delete()
+            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Comment Deleted'))
+        else:
+            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Error'))
