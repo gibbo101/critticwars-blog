@@ -28,6 +28,15 @@
                         <a class="nav-link" href="{% url 'home' %}">Blogs</a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item dropdown cw-grey">
+                        <a class="nav-link dropdown-toggle cw-grey" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{user.username}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'settings' %}">Settings</a></li>
+                            <li><a class="dropdown-item" href="{% url 'delete' %}">Delete Account</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
