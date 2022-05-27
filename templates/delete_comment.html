@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="card blog-posts-container mt-2">
+        <div class="card-body">
+            <h5 class="card-title">
+                <div class="blog-title">
+                    Delete Comment
+                    {% if user.username != comment.name %}
+                    - You should not be here!
+                    {%endif%}
+                </div>
+            </h5>
+            <p class="card-text">
+                <div class="container comments mb-2">
+                    <div class="container comments mt-2">
+                        <div class="row m-1">
+                            Posted by {{ comment.name }}
+                        </div>
+                        <div class="row m-1">
+                            {{ comment.created_on }}
+                        </div>
+                    </div>
+                    <div class="container mt-2">
+                        <div class="row">
+                            <div class="col">
+                                <p>
+                                    {{ comment.content }}
+                                    {% if comment.updated == True %}
+                                    <div class="text-end small-font">
+                                        Updated {{comment.updated_on}}
+                                    </div>
+                                    {% endif %}
+                                </p>
+
+                                {% if user.username == comment.name %}
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id" value="{{comment.id}}">
+                                    <p><button type="submit" class="btn btn-danger btn-sm">Delete</button></p>
+                                </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,9 +1,11 @@
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Blog, Comment
 from .forms import CommentForm
 import datetime
+
 
 class BlogList(generic.ListView):
     model = Blog
@@ -61,6 +63,7 @@ class BlogDetail(View):
                 "comment_form": CommentForm(),
             },
         )
+        
 
 class BlogLike(View):
 
@@ -102,4 +105,28 @@ class CommentEdit(View):
         else:
             comment_form = CommentForm()
 
-        return HttpResponseRedirect(reverse('blog', args=[slug]))
+        return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Comment Edited'))
+     
+class CommentDelete(View):
+
+    def get(self, request, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+
+        return render(
+            request,
+            "delete_comment.html",
+            {
+                "comment": comment,
+            },
+        )
+
+    def post(self, request, slug, id, *args, **kwargs):
+        queryset = Comment.objects
+        comment = get_object_or_404(queryset, id=id)
+
+        if comment:
+            comment.delete()
+            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Comment Deleted'))
+        else:
+            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Error'))

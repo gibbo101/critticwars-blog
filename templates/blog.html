@@ -83,7 +83,7 @@
 
                                 {% if user.username == comment.name %}
                                 <p><a href="{% url 'edit' comment.blog.slug comment.id %}"><button class="btn btn-success btn-sm">Edit</button></a>
-                                    <a href="{% url 'edit' comment.blog.slug comment.id %}"><button class="btn btn-danger btn-sm">Delete</button></a></p>
+                                    <a href="{% url 'delete' comment.blog.slug comment.id %}"><button class="btn btn-danger btn-sm">Delete</button></a></p>
                                 {% endif %}
                             </div>
                         </div>
