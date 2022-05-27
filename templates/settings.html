@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+<div class="container mt-3 mb-3">
+    <div class="card blog-posts-container mt-2">
+        <div class="card-body">
+            <h5 class="card-title">
+                <div class="blog-title">
+                    Edit User Settings
+                </div>
+            </h5>
+            <p class="card-text">
+                Set your CritticWars name and ID and it will show up in the blog comments.
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        {{ user_form.cw_id | as_crispy_field }}
+                    </div>
+                    <div class="row mt-2">
+                        {{ user_form.cw_name | as_crispy_field }}
+                    </div>
+
+                    <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                </form>
+
+            </p>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{%endblock%}
