@@ -21,6 +21,7 @@ class BlogDetail(View):
         queryset = Blog.objects
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.order_by('-created_on')
+        num_comments = comments
         cw_users = CwUsers.objects.all()
        
         page = request.GET.get('page', 1)
@@ -42,6 +43,7 @@ class BlogDetail(View):
             {
                 "blog": blog,
                 "comments": comments,
+                "num_comments": num_comments,
                 "cw_users": cw_users,
                 "liked": liked,
                 "comment_form": CommentForm(),
