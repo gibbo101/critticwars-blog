@@ -72,15 +72,51 @@ As bugs were discovered through the sprint a card was made to then fix it.
 # Lighthouse
 The lighthouse test showed a reduced score for accessibility as the nav bar had 2 drop down items. The error was "duplicate id elements." I fixed this by changing the id to a class. 
 
-##Blog List
+## Blog List
 ### Desktop
 ![Blog List Desktop Score](docs/images/lighthouse/blog-list-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/blog-list-desktop.png)
+![Blog List Mobile Score](docs/images/lighthouse/blog-list-mobile.png)
 
-##Blog Post and Comments
+## Blog Post and Comments
 ### Desktop
+* Initial score for Best Practice was 83 due to using a low res image. This has now been resolved.
 ![Blog Post Desktop Score](docs/images/lighthouse/blog-post-desktop.png)
 ### Mobile
-![Blog Post Mobile Score](docs/images/lighthouse/blog-post-desktop.png)
+![Blog Post Mobile Score](docs/images/lighthouse/blog-post-mobile.png)
 
+## User Settings
+### Desktop
+![Blog List Desktop Score](docs/images/lighthouse/user-settings-desktop.png)
+### Mobile
+![Blog List Mobile Score](docs/images/lighthouse/user-settings-mobile.png)
+
+## Delete Account
+### Desktop
+![Blog List Desktop Score](docs/images/lighthouse/delete-account-desktop.png)
+### Mobile
+![Blog List Mobile Score](docs/images/lighthouse/delete-account-mobile.png)
+
+## Edit Comments
+### Desktop
+![Blog List Desktop Score](docs/images/lighthouse/edit-comments-desktop.png)
+### Mobile
+![Blog List Mobile Score](docs/images/lighthouse/edit-comments-mobile.png)
+
+## Delete Comments
+### Desktop
+![Blog List Desktop Score](docs/images/lighthouse/delete-comments-desktop.png)
+### Mobile
+![Blog List Mobile Score](docs/images/lighthouse/delete-comments-mobile.png)
+
+## Log Out
+### Desktop
+![Blog List Desktop Score](docs/images/lighthouse/logout-desktop.png)
+### Mobile
+![Blog List Mobile Score](docs/images/lighthouse/logout-mobile.png)
+
+## Log Out
+### Desktop
+![Blog List Desktop Score](docs/images/lighthouse/logout-desktop.png)
+### Mobile
+![Blog List Mobile Score](docs/images/lighthouse/logout-mobile.png)
