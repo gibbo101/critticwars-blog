@@ -54,6 +54,7 @@ class BlogDetail(View):
             comment = comment_form.save(commit=False)
             comment.blog = blog
             comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Added')
         else:
             comment_form = CommentForm()
 
@@ -78,7 +79,7 @@ class BlogLike(View):
         else:
             blog.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('blog', args=[slug]))
+        return HttpResponseRedirect(reverse('like', args=[slug]))
 
 
 class CommentEdit(View):
