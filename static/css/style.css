@@ -45,10 +45,6 @@ nav {
     background-color: #363A43;
 }
 
-.nav-link {
-    color: #44ABFF;
-}
-
 .nav-link:hover {
     color: #ff0000;
 }
@@ -155,7 +151,7 @@ nav {
 
 .comments {
     border: 2px solid #ccc;
-    background: rgb(25, 27, 28);
+    background: #191b1c;
 }
 
 /* Account login / register / logout */
