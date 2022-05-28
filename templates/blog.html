@@ -7,11 +7,7 @@
 
 <div class="container mt-3 mb-3">
     <div class="card blog-posts-container">
-        {% if "placeholder" in blog.image.url %}
         <img class="card-img-top" src="{% static 'images/mainbanner.png' %}">
-        {% else %}
-        <img class="card-img-top" src="{{ blog.image.url }}">
-        {% endif %}
         <div class="card-body">
             <h5 class="card-title">
                 <div class="blog-title">
@@ -60,14 +56,25 @@
             <p class="card-text">
                 {% for comment in comments %}
 
+
+
+
+                <!-- for x in (x for x in xyz if x not in a) -->
                 <div class="container comments mb-2">
                     <div class="container comments mt-2">
                         <div class="row m-1">
-                            Posted by {{ comment.name }}
+                            Posted by {{comment.name}} on {{ comment.created_on }}
                         </div>
+                        {% for cw_user in cw_users %}
+                        {% if cw_user.user_id == comment.name_id %}
                         <div class="row m-1">
-                            {{ comment.created_on }}
+                            CritticWars: {{cw_user.cw_name}}
+                            {% if cw_user.cw_id > 0 %}
+                            (ID: {{cw_user.id}})
+                            {% endif %}
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="container mt-2">
                         <div class="row">
@@ -89,6 +96,7 @@
                         </div>
                     </div>
                 </div>
+
                 {% endfor %}
             </p>
         </div>
