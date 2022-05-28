@@ -6,8 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="object-src 'none'">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
+    <meta name="CritticWars Dev Blog" content="A developers pre-amble" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -18,7 +23,7 @@
 
     <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://www.critticwars.com"><img src="{% static 'images/cwlogo.png' %}" alt="CritticWars" class="cwlogo"></a>
+            <a class="navbar-brand" href="https://www.critticwars.com" target="_blank"><img src="{% static 'images/cwlogo.png' %}" alt="CritticWars" class="cwlogo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars cw-grey"></i>
             </button>
@@ -29,20 +34,20 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown cw-grey">
-                        <a class="nav-link dropdown-toggle cw-grey" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle cw-grey" href="#" class="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{user.username}}
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu" aria-labelledby="Account settings dropdown">
                             <li><a class="dropdown-item" href="{% url 'settings' %}">Settings</a></li>
                             <li><a class="dropdown-item" href="{% url 'delete' %}">Delete Account</a></li>
                         </ul>
                     </li>
                     {% if user.is_superuser %}
                     <li class="nav-item dropdown cw-grey">
-                        <a class="nav-link dropdown-toggle cw-grey" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle cw-grey" href="#" class="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu" aria-labelledby="Admin Settings">
                             <li><a class="dropdown-item" href="/admin/devblog/blog/add/">New Blog</a></li>
                             <li><a class="dropdown-item" href="/admin/">Admin Panel</a></li>
                         </ul>
@@ -78,13 +83,17 @@
         </div>
     </div>
 
-    </div>
-
     <main>
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
+
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+        <div class="container text-center align-top">
+            <a href="https://www.facebook.com/CritticWars" target="_blank"><i class="fab fa-facebook-square fa-lg align-middle"></i></a> | <a href="https://www.critticwars.com" target="_blank"><img class="cwicon align-middle" src="{% static 'images/cwicon.jpg' %}" alt="CritticWars"></a>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
