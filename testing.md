@@ -1,9 +1,9 @@
 # Manual Testing
-* [Manuel Testing](#manual-testing)
+* [Manual Testing](#manual-testing)
   * [Bugs and Fixes During the Development Process]
   (#bugs-and-fixes-during-the-development-process)
-* Lighthouse(#lighthouse)
-  * 
+* [Lighthouse](#lighthouse)
+
 
 
 ## Bugs and Fixes During the Development Process
@@ -87,36 +87,37 @@ The lighthouse test showed a reduced score for accessibility as the nav bar had 
 
 ## User Settings
 ### Desktop
-![Blog List Desktop Score](docs/images/lighthouse/user-settings-desktop.png)
+![User Settings Desktop Score](docs/images/lighthouse/user-settings-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/user-settings-mobile.png)
+![User Settings Mobile Score](docs/images/lighthouse/user-settings-mobile.png)
 
 ## Delete Account
 ### Desktop
-![Blog List Desktop Score](docs/images/lighthouse/delete-account-desktop.png)
+![Delete Account Desktop Score](docs/images/lighthouse/delete-account-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/delete-account-mobile.png)
+![Delete Account Mobile Score](docs/images/lighthouse/delete-account-mobile.png)
 
 ## Edit Comments
 ### Desktop
-![Blog List Desktop Score](docs/images/lighthouse/edit-comments-desktop.png)
+![Edit Comments Desktop Score](docs/images/lighthouse/edit-comments-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/edit-comments-mobile.png)
+![Edit Comments Mobile Score](docs/images/lighthouse/edit-comments-mobile.png)
 
 ## Delete Comments
 ### Desktop
-![Blog List Desktop Score](docs/images/lighthouse/delete-comments-desktop.png)
+![Delete Comments Desktop Score](docs/images/lighthouse/delete-comments-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/delete-comments-mobile.png)
+![Delete Comments Mobile Score](docs/images/lighthouse/delete-comments-mobile.png)
 
 ## Log Out
 ### Desktop
-![Blog List Desktop Score](docs/images/lighthouse/logout-desktop.png)
+![Logout Desktop Score](docs/images/lighthouse/logout-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/logout-mobile.png)
+![Logout Mobile Score](docs/images/lighthouse/logout-mobile.png)
 
-## Log Out
+## Login
 ### Desktop
-![Blog List Desktop Score](docs/images/lighthouse/logout-desktop.png)
+![Login Desktop Score](docs/images/lighthouse/register-desktop.png)
 ### Mobile
-![Blog List Mobile Score](docs/images/lighthouse/logout-mobile.png)
+![Login Mobile Score](docs/images/lighthouse/register-mobile.png)
+
