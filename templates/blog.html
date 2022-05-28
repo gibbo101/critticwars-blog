@@ -76,7 +76,7 @@
                     {% endif %}
                 </ul>
                 {% endif %}
-                {% for comment in num_comments %}
+                {% for comment in comments %}
                 <div class="container comments mb-2">
                     <div class="container comments mt-2">
                         <div class="row m-1">
@@ -87,7 +87,7 @@
                         <div class="row m-1">
                             CritticWars: {{cw_user.cw_name}}
                             {% if cw_user.cw_id > 0 %}
-                            (ID: {{cw_user.id}})
+                            (ID: {{cw_user.cw_id}})
                             {% endif %}
                         </div>
                         {% endif %}

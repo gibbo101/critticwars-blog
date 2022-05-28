@@ -56,6 +56,7 @@ class BlogDetail(View):
         user = get_object_or_404(users, id=self.request.user.id)
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.order_by('-created_on')
+        cw_users = CwUsers.objects.all()
         liked = False
         if blog.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -80,6 +81,7 @@ class BlogDetail(View):
                 "comments": comments,
                 "liked": liked,
                 "comment_form": CommentForm(),
+                "cw_users": cw_users,
             },
         )
         
