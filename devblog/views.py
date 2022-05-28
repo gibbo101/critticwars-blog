@@ -9,6 +9,8 @@ import datetime
 
 
 class BlogList(generic.ListView):
+    """ Show list of blogs on home page """
+
     model = Blog
     queryset = Blog.objects.order_by('-created_on')
     template_name = 'index.html'
@@ -16,7 +18,12 @@ class BlogList(generic.ListView):
 
 
 class BlogDetail(View):
-
+    '''
+    Get the selected blog post and collect any associated comments
+    Get data from CwUsers model to be able to display CritticWars
+    character names and IDs.
+    Post comments
+    '''
     def get(self, request, slug, *args, **kwargs):
         queryset = Blog.objects
         blog = get_object_or_404(queryset, slug=slug)
@@ -84,9 +91,10 @@ class BlogDetail(View):
                 "cw_users": cw_users,
             },
         )
-        
+
 
 class BlogLike(View):
+    """Add / Remove likes"""
 
     def post(self, request, slug, *args, **kwargs):
         blog = get_object_or_404(Blog, slug=slug)
@@ -99,6 +107,7 @@ class BlogLike(View):
 
 
 class CommentEdit(View):
+    """Edit comments"""
 
     def get(self, request, id, *args, **kwargs):
         queryset = Comment.objects
@@ -126,9 +135,11 @@ class CommentEdit(View):
         else:
             comment_form = CommentForm()
 
-        return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.SUCCESS, 'Comment Edited'))
-     
+        return HttpResponseRedirect(reverse('blog', args=[slug]),
+            messages.add_message(request, messages.SUCCESS, 'Comment Edited'))
+
 class CommentDelete(View):
+    """ Delete comments """
 
     def get(self, request, id, *args, **kwargs):
         queryset = Comment.objects
@@ -153,6 +164,7 @@ class CommentDelete(View):
             return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Error'))
 
 class Delete(View):
+    """ Delete account """
 
     def get(self, request):
         queryset = User.objects.filter(id=self.request.user.id)
@@ -178,6 +190,7 @@ class Delete(View):
 
 
 class Settings(View):
+    """View and change critticwars character settings"""
 
     def get(self, request, *args, **kwargs):
         queryset = CwUsers.objects.filter(user_id=self.request.user.id)
