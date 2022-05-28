@@ -178,13 +178,13 @@ nav {
 }
 
 .btn-cw {
-    color: #cdcdcd;
-    background: #9933cc;
+    color: #f5f5f5;
+    background: #9c27b0;
 }
 
 .btn-cw:hover {
-    color: #cdcdcd;
-    background: purple;
+    color: #000;
+    background: #cdcdcd;
 }
 
 /* Footer */
