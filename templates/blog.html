@@ -54,18 +54,36 @@
                 </div>
             </h5>
             <p class="card-text">
+
+                {% if comments.has_other_pages %}
+                <ul class="pagination">
+                    {% if comments.has_previous %}
+                    <li><a href="?page={{ comments.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+                    {% for i in comments.paginator.page_range %}
+                    {% if comments.number == i %}
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if comments.has_next %}
+                    <li><a href="?page={{ comments.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+
                 {% for comment in comments %}
-
-
-
-
-                <!-- for x in (x for x in xyz if x not in a) -->
                 <div class="container comments mb-2">
                     <div class="container comments mt-2">
                         <div class="row m-1">
                             Posted by {{comment.name}} on {{ comment.created_on }}
                         </div>
-                        {% for cw_user in cw_users %}
+                        {% for cw_user in cw_comments %}
                         {% if cw_user.user_id == comment.name_id %}
                         <div class="row m-1">
                             CritticWars: {{cw_user.cw_name}}
@@ -96,8 +114,30 @@
                         </div>
                     </div>
                 </div>
-
                 {% endfor %}
+
+                {% if comments.has_other_pages %}
+                <ul class="pagination">
+                    {% if comments.has_previous %}
+                    <li><a href="?page={{ comments.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+                    {% for i in comments.paginator.page_range %}
+                    {% if comments.number == i %}
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if comments.has_next %}
+                    <li><a href="?page={{ comments.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+
             </p>
         </div>
     </div>

@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
@@ -21,6 +22,16 @@ class BlogDetail(View):
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.order_by('-created_on')
         cw_users = CwUsers.objects.all()
+       
+        page = request.GET.get('page', 1)
+        paginator = Paginator(comments, 2)
+        try:
+            comments = paginator.page(page)
+        except PageNotAnInteger:
+            comments = paginator.page(1)
+        except EmptyPage:
+            comments = paginator.page(paginator.num_pages)
+        
         liked = False
         if blog.likes.filter(id=self.request.user.id).exists():
             liked = True
