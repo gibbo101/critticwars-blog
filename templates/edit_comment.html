@@ -5,8 +5,6 @@
 
 {% load crispy_forms_tags %}
 
-{% if user.is_authenticated %}
-{% if user.username == comment.name %}
 <div class="container mt-3 mb-3">
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
@@ -16,17 +14,28 @@
                 </div>
             </h5>
             <p class="card-text">
+                {% if user.is_authenticated %}
+                {% if user.username == comment.name or user.is_staff %}
                 <form method="post">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit">Submit</button>
+                    <button class="primaryAction btn btn-cw w-100 mt-2" type="submit">Submit</button>
                 </form>
-
+                {% else %}
+                You can only edit your own comments!
+                <a href="{% url 'blog' comment.blog.slug %}">
+                    <button type="submit" class="btn btn-danger btn-sm">Back</button>
+                </a>
+                {% endif %}
+                {% else %}
+                You must be logged in to edit comments!
+                <a href="{% url 'blog' comment.blog.slug %}">
+                    <button type="submit" class="btn btn-danger btn-sm">Back</button>
+                </a>
+                {% endif %}
             </p>
         </div>
     </div>
 </div>
-{% endif %}
-{% endif %}
 
 {% endblock %}

@@ -9,8 +9,12 @@
 
     <form method="POST" action="{% url 'delete' %}">
         {% csrf_token %}
-        <button class="btn btn-cw w-100" type="submit" onclick="deleteAccount()">Delete Account</button>
+        <button class="btn btn-cw" type="submit" onclick="deleteAccount()">Delete Account</button>
+        <a href="{% url 'home' %}">
+            <button type="button" class="btn btn-danger">Back</button>
+        </a>
     </form>
+
 </div>
 
 
