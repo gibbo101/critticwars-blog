@@ -127,8 +127,13 @@ nav {
 }
 
 .page-link {
-    background: #000;
+    background: #363A43;
     color: #cdcdcd;
+}
+
+.page-link .active {
+    background-color: #990000;
+    border: none;
 }
 
 .page-link:hover {
