@@ -7,7 +7,7 @@
 
 <div class="container mt-3 mb-3">
     <div class="card blog-posts-container">
-        <img class="card-img-top" src="{% static 'images/mainbanner.png' %}">
+        <img class="card-img-top" src="{% static 'images/mainbanner.png' %}" alt="blog banner">
         <div class="card-body">
             <h5 class="card-title">
                 <div class="blog-title">
@@ -30,13 +30,13 @@
                         {% if user.is_authenticated %}
                         <form method="POST" class="d-inline" action="{% url 'blog_like' blog.slug %}">
                             {% csrf_token %}
-                            <button class="blog-posts-container cw-grey" type="submit" name="blog_id" value="{{blog.slug}}"><i class="fas fa-heart"></i></button>
+                            <button class="blog-posts-container cw-grey" type="submit" name="blog_id" value="{{blog.slug}}" aria-label="Like"><i class="fas fa-heart"></i></button>
                         </form>
                         {% else %}
                         <i class="fas fa-heart"></i>
                         {% endif %}
                         {{ blog.number_of_likes }} |
-                        {% with comments.count as total_comments %}
+                        {% with num_comments.count as total_comments %}
                         <i class="far fa-comments"></i> {{total_comments}}
                         {% endwith %}
                     </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    {% if comments.count != 0 %}
+    {% if num_comments.count != 0 %}
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
             <h5 class="card-title">
@@ -76,14 +76,13 @@
                     {% endif %}
                 </ul>
                 {% endif %}
-
-                {% for comment in comments %}
+                {% for comment in num_comments %}
                 <div class="container comments mb-2">
                     <div class="container comments mt-2">
                         <div class="row m-1">
                             Posted by {{comment.name}} on {{ comment.created_on }}
                         </div>
-                        {% for cw_user in cw_comments %}
+                        {% for cw_user in cw_users %}
                         {% if cw_user.user_id == comment.name_id %}
                         <div class="row m-1">
                             CritticWars: {{cw_user.cw_name}}
