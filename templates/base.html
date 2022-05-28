@@ -67,27 +67,27 @@
         </div>
     </nav>
 
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{message.tags}} alert-dismissible fade show" id="msg" role="alert">
-                    {{message | safe}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <main>
+
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{message.tags}} alert-dismissible fade show" id="msg" role="alert">
+                        {{message | safe}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
 
-    <main>
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
         <!-- Clear fixed footer at bottom -->
         <br><br>
     </main>
-
 
     <footer class="fixed-bottom flex-shrink-0 py-2">
         <div class="container text-center align-top">
@@ -99,7 +99,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
-
-
 
 </html>
