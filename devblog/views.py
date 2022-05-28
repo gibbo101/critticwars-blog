@@ -79,7 +79,7 @@ class BlogLike(View):
         else:
             blog.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('like', args=[slug]))
+        return HttpResponseRedirect(reverse('blog', args=[slug]))
 
 
 class CommentEdit(View):
