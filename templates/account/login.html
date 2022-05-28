@@ -3,18 +3,18 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Login" %}{% endblock %}
 
 {% block content %}
 
 {% load crispy_forms_tags %}
 
 <div class="container accounts mt-3 p-3">
-    <h1 class="accounts-title">{% trans "Sign In" %}</h1>
+    <h1 class="accounts-title">{% trans "Login" %}</h1>
 
 
     <p>{% blocktrans %}If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+        <a href="{{ signup_url }}">register</a> first.{% endblocktrans %}</p>
 
 
     <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -23,7 +23,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="primaryAction btn btn-cw w-100 mt-2" type="submit">{% trans "Sign In" %}</button>
+        <button class="primaryAction btn btn-cw w-100 mt-2" type="submit">{% trans "Login" %}</button>
     </form>
 </div>
 
