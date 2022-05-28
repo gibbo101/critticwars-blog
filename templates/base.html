@@ -37,7 +37,7 @@
                             <li><a class="dropdown-item" href="{% url 'delete' %}">Delete Account</a></li>
                         </ul>
                     </li>
-                    {% if user.is_staff %}
+                    {% if user.is_superuser %}
                     <li class="nav-item dropdown cw-grey">
                         <a class="nav-link dropdown-toggle cw-grey" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin
