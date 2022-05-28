@@ -19,18 +19,21 @@
                 <form method="post">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button class="primaryAction btn btn-cw w-100 mt-2" type="submit">Submit</button>
+                    <button class="primaryAction btn btn-cw mt-2" type="submit">Submit</button>
+                    <a href="{% url 'blog' comment.blog.slug %}">
+                        <button type="button" class="btn btn-primary mt-2">Back</button>
+                    </a>
                 </form>
                 {% else %}
                 You can only edit your own comments!
                 <a href="{% url 'blog' comment.blog.slug %}">
-                    <button type="submit" class="btn btn-danger btn-sm">Back</button>
+                    <button type="button" class="btn btn-primary btn-sm">Back</button>
                 </a>
                 {% endif %}
                 {% else %}
                 You must be logged in to edit comments!
                 <a href="{% url 'blog' comment.blog.slug %}">
-                    <button type="submit" class="btn btn-danger btn-sm">Back</button>
+                    <button type="button" class="btn btn-primary btn-sm">Back</button>
                 </a>
                 {% endif %}
             </p>

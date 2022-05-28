@@ -5,13 +5,13 @@
 
 <div class="container accounts mt-3 p-3">
     <h1 class="accounts-title">Delete Account</h1>
-
+    This action can not be undone!
 
     <form method="POST" action="{% url 'delete' %}">
         {% csrf_token %}
-        <button class="btn btn-cw" type="submit" onclick="deleteAccount()">Delete Account</button>
+        <button class="btn btn-danger mt-2" type="submit" onclick="deleteAccount()">Delete Account</button>
         <a href="{% url 'home' %}">
-            <button type="button" class="btn btn-danger">Back</button>
+            <button type="button" class="mt-2 btn btn-primary">Cancel</button>
         </a>
     </form>
 

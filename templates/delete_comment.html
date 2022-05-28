@@ -40,18 +40,24 @@
                                 <form method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value="{{comment.id}}">
-                                    <p><button type="submit" class="btn btn-danger btn-sm" onclick="deleteComment()">Delete</button></p>
+                                    <p>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="deleteComment()">Delete</button>
+                                        <a href="{% url 'blog' comment.blog.slug %}">
+                                            <button type="button" class="btn btn-primary btn-sm">Back</button>
+                                        </a>
+                                    </p>
+
                                 </form>
                                 {% else %}
                                 You can only delete your own comments!
                                 <a href="{% url 'blog' comment.blog.slug %}">
-                                    <button type="submit" class="btn btn-danger btn-sm">Back</button>
+                                    <button type="button" class="btn btn-primary btn-sm">Back</button>
                                 </a>
                                 {% endif %}
                                 {% else %}
                                 You must be logged in to delete comments!
                                 <a href="{% url 'blog' comment.blog.slug %}">
-                                    <button type="submit" class="btn btn-danger btn-sm">Back</button>
+                                    <button type="button" class="btn btn-primary btn-sm">Back</button>
                                 </a>
                                 {% endif %}
                             </div>
