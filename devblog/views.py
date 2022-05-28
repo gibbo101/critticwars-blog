@@ -24,7 +24,7 @@ class BlogDetail(View):
         cw_users = CwUsers.objects.all()
        
         page = request.GET.get('page', 1)
-        paginator = Paginator(comments, 2)
+        paginator = Paginator(comments, 10)
         try:
             comments = paginator.page(page)
         except PageNotAnInteger:
