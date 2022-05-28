@@ -102,7 +102,7 @@
                     {% if user.is_authenticated %}
                     Add to the conversation
                     {% else %}
-                    Login to join the conversation
+                    <a href="{% url 'account_login' %}">Login to join the conversation</a>
                     {% endif %}
                 </div>
             </h5>
