@@ -20,7 +20,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm">
+    <nav class="navbar fixed-top navbar-expand-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://www.critticwars.com" target="_blank"><img src="{% static 'images/cwlogo.webp' %}" alt="CritticWars" class="cwlogo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,9 +86,12 @@
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
+        <!-- Clear fixed footer at bottom -->
+        <br><br>
     </main>
 
-    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+
+    <footer class="fixed-bottom flex-shrink-0 py-2">
         <div class="container text-center align-top">
             <a href="https://www.facebook.com/CritticWars" target="_blank"><i class="fab fa-facebook-square fa-lg align-middle"></i></a> | <a href="https://www.critticwars.com" target="_blank"><img class="cwicon align-middle" src="{% static 'images/cwicon.jpg' %}" alt="CritticWars"></a>
         </div>

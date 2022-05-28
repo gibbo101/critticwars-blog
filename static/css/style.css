@@ -18,6 +18,10 @@ body {
     color: #cdcdcd;
 }
 
+main {
+    margin-top: 4.5rem;
+}
+
 A:link {
     text-decoration: none;
     color: #cdcdcd;
@@ -188,6 +192,10 @@ nav {
 }
 
 /* Footer */
+
+footer {
+    background-color: #363A43;
+}
 
 .cwicon {
     height: 18px;
