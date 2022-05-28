@@ -127,18 +127,23 @@ nav {
 }
 
 .page-link {
-    background: #363A43;
+    background: #191b1c;
     color: #cdcdcd;
 }
 
-.page-link .active {
+.page-item.active .page-link {
     background-color: #990000;
-    border: none;
+    border-color: #dee2e6;
 }
 
 .page-link:hover {
     background-color: #990000;
     color: #cdcdcd;
+}
+
+
+.no-link:hover {
+    background: #191b1c;
 }
 
 /* Blog posts */

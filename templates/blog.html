@@ -58,21 +58,21 @@
                 {% if comments.has_other_pages %}
                 <ul class="pagination">
                     {% if comments.has_previous %}
-                    <li><a href="?page={{ comments.previous_page_number }}">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ comments.previous_page_number }}">&laquo;</a></li>
                     {% else %}
-                    <li class="disabled"><span>&laquo;</span></li>
+                    <li class="page-item"><span class="page-link no-link">&laquo;</span></li>
                     {% endif %}
                     {% for i in comments.paginator.page_range %}
                     {% if comments.number == i %}
-                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    <li class="page-item active"><span class="page-link">{{ i }}</span></li>
                     {% else %}
-                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
                     {% endif %}
                     {% endfor %}
                     {% if comments.has_next %}
-                    <li><a href="?page={{ comments.next_page_number }}">&raquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ comments.next_page_number }}">&raquo;</a></li>
                     {% else %}
-                    <li class="disabled"><span>&raquo;</span></li>
+                    <li class="page-item"><span class="page-link no-link">&raquo;</span></li>
                     {% endif %}
                 </ul>
                 {% endif %}
@@ -121,7 +121,7 @@
                     {% if comments.has_previous %}
                     <li class="page-item"><a class="page-link" href="?page={{ comments.previous_page_number }}">&laquo;</a></li>
                     {% else %}
-                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                    <li class="page-item"><span class="page-link no-link">&laquo;</span></li>
                     {% endif %}
                     {% for i in comments.paginator.page_range %}
                     {% if comments.number == i %}
@@ -133,7 +133,7 @@
                     {% if comments.has_next %}
                     <li class="page-item"><a class="page-link" href="?page={{ comments.next_page_number }}">&raquo;</a></li>
                     {% else %}
-                    <li class="page-item"><span class="page-link">&raquo;</span></li>
+                    <li class="page-item"><span class="page-link no-link">&raquo;</span></li>
                     {% endif %}
                 </ul>
                 {% endif %}
