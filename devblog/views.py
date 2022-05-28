@@ -30,7 +30,7 @@ class BlogDetail(View):
             {
                 "blog": blog,
                 "comments": comments,
-                "cw_users": cw_users,
+                # "cw_users": cw_users,
                 "liked": liked,
                 "comment_form": CommentForm(),
             },
