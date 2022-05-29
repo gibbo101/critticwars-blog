@@ -1,8 +1,8 @@
 # Manual Testing
-* [Manual Testing](#manual-testing)
-  * [Bugs and Fixes During the Development Process]
-  (#bugs-and-fixes-during-the-development-process)
+* [Bugs and Fixes During the Development Process](#bugs-and-fixes-during-the-development-process)
 * [Lighthouse](#lighthouse)
+* [Validators](#validators)
+* [Manual Testing](#manual-testing)
 
 
 
@@ -148,3 +148,70 @@ The following errors were found when running through the pep8 checker.
 * devblog/models.py - line too long, too many blank lines, expected 2 blank lines, found 1
 * devblog/urls.py - line too long
 * critticwars/settings.py - line too long
+
+# Manual Testing 
+Below is a summary of the manual testing carried out for each user story.
+
+## As an Admin I can..
+
+This mostly comprised of checking the admin panel, however, I also added in a feature where an admin can edit / delete anyones comments from within the main site.
+
+* I can create, update, read and delete posts so that I can manage my blog content  
+&check; Can create a new blog post in the admin panel using the summer note editor  
+&check; Can delete a blog post from the admin panel  
+&check; Can update a blog post from the admin panel  
+&check; Can update a blog post from the admin panel  
+&check; Can filter by date created from the admin panel  
+&check; Links on the nav bar to the admin panel and create blog post are only visible to admins
+
+* I can edit / delete comments so that I can moderate content  
+&check; Admin users can see an Edit / Delete button on every comment
+&check; Admin users can access the edit / delete comment screens if the comment is no theirs
+&check; Admin users can edit / delete the comment from the edit / delete comment screens if the comment is not theirs
+
+## As a Unregistered User I can... 
+* View Blog posts and their comments
+&check; Anyone can see blog posts regardless of loggedin status
+&check; Anyone can see blog content and comments regardless of loggedin status
+&check; The input comment box does not show and is replaced with a link to the login page
+
+* Register for an account  
+&check; Loggout or unregistered users can see a Register link in the nav bar.  
+&check; The register page successfully registers a user for a new account.  
+&check; Logged out users can see a login link on the nav bar and access it to log in to the site  
+
+
+## As a Site User (logged in) I can...  
+* Like / Unlike a post  
+&check; Clicking on the like button adds a like if the user hasn't liked the post already.  
+&check; Clicking on the like button removes a like if the user has already liked the post  
+&check; Users that are not logged in are unable to press the like button.
+
+* Comment on a blog post  
+&check; Comments box shows to users who are logged in  
+&check; Users can not submit an empty comment  
+&check; Once submitted the comment shows in the comments list with the correct users name and posted date attached  
+
+* Edit my own comment  
+&check; Users can see an edit button on their own comments only  
+&check; Users can access the edit comment screen which displays their post details in a ready filled edit box  
+&check; Users who try to manipulate the url to a post id that is not theirs get an error message or a 404 if the post does not exist
+
+* Delete my own comment  
+&check; Users can see an delete button on their own comments only  
+&check; Users can access the delete comment screen which displays their post details in a ready filled edit box  
+&check; Users who try to manipulate the url to a post id that is not theirs get an error message or a 404 if the post does not exist
+
+* See a list of posts / comments that is paginated so that I can easily see the data
+&check; Pagination buttons show when there is more than 10 comments on the blog post screen or more than 10 blogs on the home page  
+&check; By manually changing tha pagination number I could see the pagination buttons changing  
+&check; If on the last or first page the respective next page buttons are disabled, as is the current page
+
+* Set my own CritticWars account data so it shows up in the comments  
+&check; Registered users can see an account settings drop down in the nav bar  
+&check; Registered users can access the account settings screen  
+&check; Registered users see their own data in the account settings screen  
+&check; Registered users can change their data which updates their comments to show their Critticwars screen name and if their ID > 0, shows their ID  
+&check; The comments screen shows a users Critticwars name and it doesn't show on an incorrect users comment
+
+[Back to Readme](README.md)
