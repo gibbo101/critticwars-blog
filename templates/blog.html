@@ -49,9 +49,9 @@
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
             <h5 class="card-title">
-                <div class="blog-title">
+                <p class="blog-title">
                     Comments
-                </div>
+                </p>
             </h5>
             <p class="card-text">
 
@@ -106,8 +106,10 @@
                                 </p>
 
                                 {% if user.username == comment.name or user.is_superuser %}
-                                <p><a href="{% url 'edit' comment.blog.slug comment.id %}"><button class="btn btn-success btn-sm">Edit</button></a>
-                                    <a href="{% url 'delete' comment.blog.slug comment.id %}"><button class="btn btn-danger btn-sm">Delete</button></a></p>
+                                <p>
+                                    <a href="{% url 'edit' comment.blog.slug comment.id %}"><button class="btn btn-success btn-sm">Edit</button></a>
+                                    <a href="{% url 'delete' comment.blog.slug comment.id %}"><button class="btn btn-danger btn-sm">Delete</button></a>
+                                </p>
                                 {% endif %}
                             </div>
                         </div>
