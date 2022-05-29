@@ -10,9 +10,9 @@
         <img class="card-img-top" src="{% static 'images/mainbanner.png' %}" alt="blog banner">
         <div class="card-body">
             <h5 class="card-title">
-                <div class="blog-title">
+                <p class="blog-title">
                     {{blog.title}}
-                </div>
+                </p>
             </h5>
 
             <p class="card-text">
@@ -147,13 +147,13 @@
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
             <h5 class="card-title">
-                <div class="blog-title">
+                <progress class="blog-title">
                     {% if user.is_authenticated %}
                     Add to the conversation
                     {% else %}
                     <a href="{% url 'account_login' %}">Login to join the conversation</a>
                     {% endif %}
-                </div>
+                    </p>
             </h5>
             <p class="card-text">
                 {% if user.is_authenticated %}
