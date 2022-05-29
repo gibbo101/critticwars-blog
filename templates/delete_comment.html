@@ -48,13 +48,13 @@
                                 </form>
                                 {% else %}
                                 You can only delete your own comments!
-                                <a href="{% url 'blog' comment.blog.slug %}">
+                                <a href="{% url 'home' %}">
                                     <button type="button" class="btn btn-primary btn-sm">Back</button>
                                 </a>
                                 {% endif %}
                                 {% else %}
                                 You must be logged in to delete comments!
-                                <a href="{% url 'blog' comment.blog.slug %}">
+                                <a href="{% url 'home' %}">
                                     <button type="button" class="btn btn-primary btn-sm">Back</button>
                                 </a>
                                 {% endif %}
