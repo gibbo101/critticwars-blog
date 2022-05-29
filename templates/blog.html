@@ -9,10 +9,8 @@
     <div class="card blog-posts-container">
         <img class="card-img-top" src="{% static 'images/mainbanner.png' %}" alt="blog banner">
         <div class="card-body">
-            <h5 class="card-title">
-                <p class="blog-title">
-                    {{blog.title}}
-                </p>
+            <h5 class="card-title blog-title">
+                {{blog.title}}
             </h5>
 
             <p class="card-text">
@@ -48,10 +46,8 @@
     {% if num_comments.count != 0 %}
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
-            <h5 class="card-title">
-                <p class="blog-title">
-                    Comments
-                </p>
+            <h5 class="card-title blog-title">
+                Comments
             </h5>
             <p class="card-text">
 
@@ -146,14 +142,12 @@
 
     <div class="card blog-posts-container mt-2">
         <div class="card-body">
-            <h5 class="card-title">
-                <progress class="blog-title">
-                    {% if user.is_authenticated %}
-                    Add to the conversation
-                    {% else %}
-                    <a href="{% url 'account_login' %}">Login to join the conversation</a>
-                    {% endif %}
-                    </p>
+            <h5 class="card-title blog-title">
+                {% if user.is_authenticated %}
+                Add to the conversation
+                {% else %}
+                <a href="{% url 'account_login' %}">Login to join the conversation</a>
+                {% endif %}
             </h5>
             <p class="card-text">
                 {% if user.is_authenticated %}
