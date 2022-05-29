@@ -121,3 +121,30 @@ The lighthouse test showed a reduced score for accessibility as the nav bar had 
 ### Mobile
 ![Login Mobile Score](docs/images/lighthouse/register-mobile.png)
 
+# Validators
+## [HTML](https://validator.w3.org):
+
+Pages were free from errors, except those noted below.
+
+* An error was thrown for using a div tag as a child of a h5 tag on the blog post comments page and the edit and delete comments pages. These have now been fixed.
+* There was also an error for no alt tag in an image but this was from a blog post input where I had no control over the image being posted. 
+![blog list error](docs/images/validators/html-blog-comments.png)
+
+* Otherwise the site was free of errors.
+
+![html validator](docs/images/validators/html-blog-list.png)
+
+## [CSS](https://jigsaw.w3.org/css-validator/):
+My CSS file was tested and found to be free from errors
+
+![html validator](docs/images/validators/css.png)
+
+## [JS](https://jshint.com/):
+No errors were found using JShint. 
+
+## [PEP8](http://pep8online.com):
+The following errors were found when running through the pep8 checker. 
+* devblog/admin.py - 	missing whitespace after ','
+* devblog/models.py - line too long, too many blank lines, expected 2 blank lines, found 1
+* devblog/urls.py - line too long
+* critticwars/settings.py - line too long

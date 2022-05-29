@@ -24,13 +24,14 @@ class BlogDetail(View):
     character names and IDs.
     Post comments
     '''
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Blog.objects
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.order_by('-created_on')
         num_comments = comments
         cw_users = CwUsers.objects.all()
-       
+
         page = request.GET.get('page', 1)
         paginator = Paginator(comments, 10)
         try:
@@ -39,7 +40,7 @@ class BlogDetail(View):
             comments = paginator.page(1)
         except EmptyPage:
             comments = paginator.page(paginator.num_pages)
-        
+
         liked = False
         if blog.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -135,8 +136,11 @@ class CommentEdit(View):
         else:
             comment_form = CommentForm()
 
-        return HttpResponseRedirect(reverse('blog', args=[slug]),
-            messages.add_message(request, messages.SUCCESS, 'Comment Edited'))
+        return HttpResponseRedirect(
+            reverse(
+                'blog', args=[slug]), messages.add_message(
+                request, messages.SUCCESS, 'Comment Edited'))
+
 
 class CommentDelete(View):
     """ Delete comments """
@@ -159,9 +163,16 @@ class CommentDelete(View):
 
         if comment:
             comment.delete()
-            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Comment Deleted'))
+            return HttpResponseRedirect(
+                reverse(
+                    'blog', args=[slug]), messages.add_message(
+                    request, messages.ERROR, 'Comment Deleted'))
         else:
-            return HttpResponseRedirect(reverse('blog', args=[slug]), messages.add_message(request, messages.ERROR, 'Error'))
+            return HttpResponseRedirect(
+                reverse(
+                    'blog', args=[slug]), messages.add_message(
+                    request, messages.ERROR, 'Error'))
+
 
 class Delete(View):
     """ Delete account """
@@ -186,7 +197,8 @@ class Delete(View):
             delete.delete()
             return HttpResponseRedirect('/')
         else:
-            return HttpResponseRedirect('home'), messages.add_message(request, messages.ERROR, 'Error')
+            return HttpResponseRedirect('home'), messages.add_message(
+                request, messages.ERROR, 'Error')
 
 
 class Settings(View):
@@ -197,10 +209,14 @@ class Settings(View):
         users = User.objects
         user = get_object_or_404(users, id=self.request.user.id)
         if not queryset:
-            user_settings = CwUsers(cw_name=self.request.user.username, cw_id=0, user_id=user)
+            user_settings = CwUsers(
+                cw_name=self.request.user.username,
+                cw_id=0,
+                user_id=user)
             user_settings.save()
 
-        user_settings = get_object_or_404(queryset, user_id=self.request.user.id)
+        user_settings = get_object_or_404(
+            queryset, user_id=self.request.user.id)
 
         return render(
             request,
@@ -213,7 +229,8 @@ class Settings(View):
 
     def post(self, request, *args, **kwargs):
         queryset = CwUsers.objects.filter(user_id=self.request.user.id)
-        user_settings = get_object_or_404(queryset, user_id=self.request.user.id)
+        user_settings = get_object_or_404(
+            queryset, user_id=self.request.user.id)
         user_form = CritticWarsForm(data=request.POST, instance=user_settings)
 
         if user_form.is_valid():
@@ -222,4 +239,9 @@ class Settings(View):
         else:
             user_form = CritticWarsForm()
 
-        return HttpResponseRedirect(reverse('home'), messages.add_message(request, messages.SUCCESS, 'User Settings Edited'))
+        return HttpResponseRedirect(
+            reverse('home'),
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'User Settings Edited'))
