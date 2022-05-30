@@ -9,16 +9,38 @@ This site is for the developers of [CritticWars](https://www.critticwars.com), a
 # Contents  
 
 * [Planning Phase](#planning-phase)
+  * [Site Aims](#site-aims)
+  * [User Stories](#user-stories)
+  * [Wireframes](#wireframes)
+  * [Database Schema](#database=schama)
+* [Front End Design](#front-end-design)
+  * [Color Scheme](#color-scheme)
+  * [Typograpghy](#typograpghy)
+* [Agile Development Process](#agile-development-process)
+* [Features](#features)
+  * [Navigation](#navigation)
+  * [Hero Image](#hero-image)
+  * [Blog List](#blog-list)
+  * [Blog Post and Comments](#blog-post-and-comments)
+  * [Edit Comments](#edit-comments)
+  * [Delete Comments](#delete-comments)
+  * [Delete Account](#delete-account)
+  * [Account Authentication](#account-authentication)
+  * [Messages](#messages)
+  * [Pagination](#pagination)
+  * [Footer](#footer)
+  * [Error Pages](#error-pages)
+  
 
-# Planning Phase
+## **Planning Phase**
 
-## Site Aims
+### **Site Aims**
 
 CritticWars is a text based browser game that I have been developing. As part of the development process an announcement board is used to post updates that players can see upon logging into the game. However, I tend to keep these as short as possible as not all players like to see the extra detail of how and why a new feature was made, they just want to know its there and how to use it. 
 The DevBlog was created to give the players that do want to see the extra information the opportunity to do so. 
 The site aims to make it really easy to view the latest blogs and to dive into the blog and read comments. If a user wishes to do so they can then log in and post their own comments on each blog. 
 
-## User Stories
+### **User Stories**
 * As an Admin I can...
 
   * I can create, update, read and delete posts so that I can manage my blog content 
@@ -35,19 +57,19 @@ The site aims to make it really easy to view the latest blogs and to dive into t
   * Delete my own comment
   * Set my own CritticWars account data so it shows up in the comments
 
-## WireFrames 
+### **WireFrames**
 ![Home Page](docs/images/wireframes/wireframes-home-page.png)
 ![Blog post and comments page](docs/images/wireframes/wireframes-blog-comments.png)
 ![Login Page](docs/images/wireframes/wireframes-login.png)
 ![Mobile Pages](docs/images/wireframes/wireframes-mobile.png) 
 
-## Database Schema
-[!database](docs/images/wireframes/database-schema.png)
+### **Database Schema**
+![database](docs/images/wireframes/database-schema.png)
 The data base consists of 3 tables. Blogs for blog posts. Comments for comments on blogs and CwUsers for users setting their own CritticWars account details. 
 The comments table has a foreign key with the blog table so comments for a particular blog can be fetched and if a blog is deleted, all associated comments are deleted as well. 
 All tables are linked to the User table, allowing user specific deletiton should they delete their account.
 
-## Front End Design
+## **Front End Design**
 
 ### Color Scheme
 The colour scheme for the site keeps in line with the overall scheme for CritticWars, opting to utilise the dark mode schema of the site.
@@ -68,7 +90,7 @@ I have tried to use a uniform set of buttons around the site with their color in
   ![buttons](docs/images/frontend/purple-blue-button.png)  
   ![buttons](docs/images/frontend/green-red-button.png)
 
-### Typography
+### **Typography**
 
 For the site two different fonts were used. 
 
@@ -76,15 +98,13 @@ For the site two different fonts were used.
 
 * Sans-Serif - The default Bootstrap font. The main CritticWars website utilises the condensed Roboto fornt due to its need to fit font into smaller boxes and narrow sidebars whilst also not being a truly full screen layout. For a more full screen design on DevBlog the standard bootstrap font offered excellent readability whilst also being somewhat close to the CritticWars font style so I saw no need to deviate from the default font. 
 
-## Agile Development Process
+## **Agile Development Process**
 
 I used GitHub projects to create User Storys and Bug cards and can be found on the [Git Hub Repository](https://github.com/gibbo101/critticwars-blog/projects/2)
 
-## Features
+## **Features**
 
-### Navigation
-
-#### NavBar
+#### **Navigation**
 The nav bar allows the user to easily navigate around the site.
 
 * Logo: The logo on the nav bar features the CritticWars logo found on the main sites login page and provides a link back to the main site.  
@@ -118,61 +138,61 @@ The nav bar allows the user to easily navigate around the site.
 ![nav responsive](docs/images/frontend/nav-responsive.png)  
 ![nav responsive](docs/images/frontend/nav-responsive-open.png)  
 
-### Hero Image  
+### **Hero Image** 
 To give a spice of identity and color to the pages, the background utilises a page spanning hero image of the CritticWars login pages.
 I wanted something that shouted to the users that this site was a part of CritticWars and the hero image is an iconic CritticWars background. 
 ![hero image](docs/images/frontend/bg.webp)
 
 
-### Blog List (Home Page)
+### **Blog List (Home Page)**
 The landing page for the DevBlog shows a paginated list of blog posts. Using a standard Critticwars banner as the blog background it keeps with the CritticWars theme. 
 ![Blog List](docs/images/frontend/blog-list.png)
 
-### Blog Post and comments page
+### **Blog Post and Comments**
 The blog post page shows the blog content of the selected post and if there are any comments these are displayed. If the user is logged in they are able to see a text field to input a comment.
 Otherwise there is a login link displayed. The blog post has the main CritticWars header as a banner before content is displayed to give the page some life.   
 ![Blog Posts](docs/images/frontend/blog-post-no-comments.png)  
 ![Blog Posts](docs/images/frontend/blog-post-comments.png)
 
-### Edit Comments
+### **Edit Comments**
 The edit comments screen allows users (or admins) to edit their posts. Defensive programming is in place to stop a standard or non logged in user from editing a comment that is not theirs.
 ![Edit Comments](docs/images/frontend/edit-post.png)
 ![Edit Comments](docs/images/frontend/edit-post-defensive.png)
 
-### Delete Comments
+### **Delete Comments**
 The delete comments screen allows users (or admins) to delete their posts. Defensive programming is in place to stop a standard or non logged in user from editing a comment that is not theirs.
 ![Delete Comments](docs/images/frontend/delete-comment.png)
 ![Delete Comments](docs/images/frontend/delete-comment-defensive.png)
 
-### Account Settings
+### **Account Settings**
 The account settings page allows a user to set their CritticWars ID and ingame name. Once set this will display on their comments posts. 
 ![Account Comments](docs/images/frontend/delete-comment-defensive.png)
 
-### Delete Account
+### **Delete Account**
 Users can delete their account and this will delete all blog posts and comments associated with the user. A pop up warning will display before the account is deleted.
 The style is similar to the login pages to keep consistency with Account creation / deletion.
 ![Delete Account](docs/images/frontend/delete-account.png)
 
-### Account Registraition / Login / Logout
+### **Account Authentication**
 All account registration / login pages have been designed to be similar to the CritticWars login pages. Aiming to bring the hero image into full view the containers utilise a slightly transparent style, giving a good view of the hero image whislt still leaving text easily readable.  
 ![Register](docs/images/frontend/register.png)  
 ![Login](docs/images/frontend/login.png)  
 ![Logout](docs/images/frontend/logout.png)  
 
-### Messages
+### **Messages**
 Whenever a user completes an action, a message wil flash at the top of the screen before disappearing after 2 seconds. This happens for actions such as logging out, logging in, posting / editing a commetn etc.  
 ![Messages](docs/images/frontend/messages.png)
 
-### Pagination  
+### **Pagination**  
 Pagination appears on the Blog lists screen and on the comments list.  
 ![Pagination](docs/images/frontend/pagination.png)
 
 
-### Footer  
+### **Footer**  
 Displays the link to the CritticWars facebook site as well as to the actual CritticWars site.  
 ![Footer](docs/images/frontend/footer.png)
 
-### Error pages
+### **Error pages**
 I created a custom error page to pick up and 404 or 500 errors that users might get if trying to edit url to get to areas they shouldn't be in.  
 ![Error Page](docs/images/frontend/errors.png)
 
