@@ -214,7 +214,7 @@ I created a custom error page to pick up and 404 or 500 errors that users might 
  * Like button to not refresh the page when clicked
 
 ## Testing Phase
-All details of testing during and post-development can be found in a seperate file called [TESTING.MD](TESTING.md)
+All details of testing during and post-development can be found in a seperate file called [TESTING.md](TESTING.md)
 
 ## Deployment
 
@@ -228,7 +228,7 @@ Below are the steps I took to deploy the site to Heroku and any console commands
    
 #### Setting up the Workspace (To be done locally via the console of your chosen editor):
 1. Create a virtual environment on your machine (Can be skipped if using gitpod):
-    * python -m venv .venv
+    * ```python3 -m venv .venv```
 1. To ensure the virtual environment is not tracked by version control, add .venv to the .gitignore file.
 1. Install Django with version 3.2:
     * ```pip3 install django<4 ```
