@@ -1,6 +1,6 @@
 # **CritticWars DevBlog**
 
-This site is for the developers of [CritticWars](https://www.critticwars.com), a text-based browser game to be able to post longer, detailed posts about the development progress of the site whilst keeping announcements in game shorter for players who may not be interested in the detai.
+This site is for the developers of [CritticWars](https://www.critticwars.com), a text-based browser game, to be able to post longer, detailed posts about the development progress of the site whilst keeping announcements in game shorter for players who may not be interested in the detai.
 
 ![Responsive screenshot showing site on different screen sizes](docs/images/responsive.png)
 
@@ -105,7 +105,7 @@ For the site two different fonts were used.
 
 * Amatic SC - This font utilises a Capitilised style and is used on the CritticWars website in most of their banners, making it a great choice to use for Titles in areas across the site.
 
-* Sans-Serif - The default Bootstrap font. The main CritticWars website utilises the condensed Roboto fornt due to its need to fit font into smaller boxes and narrow sidebars whilst also not being a truly full screen layout. For a more full screen design on DevBlog the standard bootstrap font offered excellent readability whilst also being somewhat close to the CritticWars font style so I saw no need to deviate from the default font. 
+* Sans-Serif - The default Bootstrap font. The main CritticWars website utilises the condensed Roboto font due to its need to fit font into smaller boxes and narrow sidebars whilst also not being a truly full screen layout. For a more full screen design on DevBlog the standard bootstrap font offered excellent readability whilst also being somewhat close to the CritticWars font style so I saw no need to deviate from the default font. 
 
 ## **Agile Development Process**
 
@@ -189,7 +189,7 @@ All account registration / login pages have been designed to be similar to the C
 ![Logout](docs/images/frontend/logout.png)  
 
 ### **Messages**
-Whenever a user completes an action, a message wil flash at the top of the screen before disappearing after 2 seconds. This happens for actions such as logging out, logging in, posting / editing a commetn etc.  
+Whenever a user completes an action, a message wil flash at the top of the screen before disappearing after 2 seconds. This happens for actions such as logging out, logging in, posting / editing a comment etc.  
 ![Messages](docs/images/frontend/messages.png)
 
 ### **Pagination**  
@@ -214,7 +214,7 @@ I created a custom error page to pick up and 404 or 500 errors that users might 
  * Like button to not refresh the page when clicked
 
 ## Testing Phase
-All details of testing during and post-development can be found in a seperate file called [TESTING.MD](TESTING.MD)
+All details of testing during and post-development can be found in a seperate file called [TESTING.MD](TESTING.md)
 
 ## Deployment
 
