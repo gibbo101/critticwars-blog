@@ -4,7 +4,7 @@ This site is for the developers of [CritticWars](https://www.critticwars.com), a
 
 ![Responsive screenshot showing site on different screen sizes](docs/images/responsive.png)
 
-[Deployed site](https://critticwas-dev-blog.herokuapp.com/)
+[Deployed site](https://critticwars-dev-blog.herokuapp.com/)
 
 # Contents  
 
@@ -122,3 +122,62 @@ The nav bar allows the user to easily navigate around the site.
 To give a spice of identity and color to the pages, the background utilises a page spanning hero image of the CritticWars login pages.
 I wanted something that shouted to the users that this site was a part of CritticWars and the hero image is an iconic CritticWars background. 
 ![hero image](docs/images/frontend/bg.webp)
+
+
+### Blog List (Home Page)
+The landing page for the DevBlog shows a paginated list of blog posts. Using a standard Critticwars banner as the blog background it keeps with the CritticWars theme. 
+![Blog List](docs/images/frontend/blog-list.png)
+
+### Blog Post and comments page
+The blog post page shows the blog content of the selected post and if there are any comments these are displayed. If the user is logged in they are able to see a text field to input a comment.
+Otherwise there is a login link displayed. The blog post has the main CritticWars header as a banner before content is displayed to give the page some life.   
+![Blog Posts](docs/images/frontend/blog-post-no-comments.png)  
+![Blog Posts](docs/images/frontend/blog-post-comments.png)
+
+### Edit Comments
+The edit comments screen allows users (or admins) to edit their posts. Defensive programming is in place to stop a standard or non logged in user from editing a comment that is not theirs.
+![Edit Comments](docs/images/frontend/edit-post.png)
+![Edit Comments](docs/images/frontend/edit-post-defensive.png)
+
+### Delete Comments
+The delete comments screen allows users (or admins) to delete their posts. Defensive programming is in place to stop a standard or non logged in user from editing a comment that is not theirs.
+![Delete Comments](docs/images/frontend/delete-comment.png)
+![Delete Comments](docs/images/frontend/delete-comment-defensive.png)
+
+### Account Settings
+The account settings page allows a user to set their CritticWars ID and ingame name. Once set this will display on their comments posts. 
+![Account Comments](docs/images/frontend/delete-comment-defensive.png)
+
+### Delete Account
+Users can delete their account and this will delete all blog posts and comments associated with the user. A pop up warning will display before the account is deleted.
+The style is similar to the login pages to keep consistency with Account creation / deletion.
+![Delete Account](docs/images/frontend/delete-account.png)
+
+### Account Registraition / Login / Logout
+All account registration / login pages have been designed to be similar to the CritticWars login pages. Aiming to bring the hero image into full view the containers utilise a slightly transparent style, giving a good view of the hero image whislt still leaving text easily readable.  
+![Register](docs/images/frontend/register.png)  
+![Login](docs/images/frontend/login.png)  
+![Logout](docs/images/frontend/logout.png)  
+
+### Messages
+Whenever a user completes an action, a message wil flash at the top of the screen before disappearing after 2 seconds. This happens for actions such as logging out, logging in, posting / editing a commetn etc.  
+![Messages](docs/images/frontend/messages.png)
+
+### Pagination  
+Pagination appears on the Blog lists screen and on the comments list.  
+![Pagination](docs/images/frontend/pagination.png)
+
+
+### Footer  
+Displays the link to the CritticWars facebook site as well as to the actual CritticWars site.
+![Footer](docs/images/frontend/footer.png)
+
+### 500 Server Error Page
+
+
+### 404 Page Not Found
+
+
+### Refs
+
+Custom Django error Pages: LevelUp(https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317)
