@@ -20,7 +20,7 @@ This site is for the developers of [CritticWars](https://www.critticwars.com), a
 * [Features](#features)
   * [Navigation](#navigation)
   * [Hero Image](#hero-image)
-  * [Blog List](#blog-list)
+  * [Blog List](#blog-list-home-page)
   * [Blog Post and Comments](#blog-post-and-comments)
   * [Edit Comments](#edit-comments)
   * [Delete Comments](#delete-comments)
@@ -30,6 +30,13 @@ This site is for the developers of [CritticWars](https://www.critticwars.com), a
   * [Pagination](#pagination)
   * [Footer](#footer)
   * [Error Pages](#error-pages)
+* [Future Development](#future-development)
+* [Testing Phase](#testing-phase)
+* [Deployment](#deployment)
+* [Technologies Used](#technologies-used)
+* [With Thanks](#with-thanks)
+* [Credits](#credits)
+  * [Images](#images)
   
 
 ## **Planning Phase**
@@ -232,11 +239,11 @@ All details of testing during and post-development can be found in a seperate fi
   * Font Awesome
     * For the Facebook, Like and Comments icons
 
-## With thanks
+## With Thanks
   * [Richard Wells](https://github.com/D0nni387) - My mentor who helped guide me through my project and gave suggestions to push it that little bit further. Thanks!
 
 
-### Credits
+## Credits
   * Balsamic was used to create the Wireframes
   * Gitpod - Online IDE utilising VS code that was used to develop this project
   * [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/) for checking colour contrast for my chosen color scheme
@@ -248,5 +255,5 @@ All details of testing during and post-development can be found in a seperate fi
   * [Code Institute Learning Platform](https://codeinstitute.net/) for reference to course material on how to build a Django app
   * Fonts: Amatic SC was taken from [Google Fonts](https://fonts.google.com/specimen/Amatic+SC?query=amat) and the default font was the bootstrap default
 
-  #### images
-  All images were sourced from my website [critticwars.com](https://www.critticwars.com)
+### Images
+All images were sourced from my website [critticwars.com](https://www.critticwars.com)
