@@ -34,7 +34,91 @@ The site aims to make it really easy to view the latest blogs and to dive into t
   * Edit my own comment
   * Delete my own comment
   * Set my own CritticWars account data so it shows up in the comments
-  
+
+## WireFrames 
+![Home Page](docs/images/wireframes/wireframes-home-page.png)
+![Blog post and comments page](docs/images/wireframes/wireframes-blog-comments.png)
+![Login Page](docs/images/wireframes/wireframes-login.png)
+![Mobile Pages](docs/images/wireframes/wireframes-mobile.png) 
+
+## Database Schema
+[!database](docs/images/wireframes/database-schema.png)
+The data base consists of 3 tables. Blogs for blog posts. Comments for comments on blogs and CwUsers for users setting their own CritticWars account details. 
+The comments table has a foreign key with the blog table so comments for a particular blog can be fetched and if a blog is deleted, all associated comments are deleted as well. 
+All tables are linked to the User table, allowing user specific deletiton should they delete their account.
+
+## Front End Design
+
+### Color Scheme
+The colour scheme for the site keeps in line with the overall scheme for CritticWars, opting to utilise the dark mode schema of the site.
+For the login pages I went for the general design of the Critticwars site in an effort to let the hero image really shine through, using the same color scheme as the main content areas but with a tint of transparency.  
+
+* Nav Bars and main content areas  
+![main content](docs/images/frontend/main-color-scheme.png)  
+
+* Comments Boxes  
+![comments boxes](docs/images/frontend/comments-color-schema.png)
+
+* Buttons
+I have tried to use a uniform set of buttons around the site with their color indicating their purpose.
+  * Purple - Action (e.g. submit a form or login)  
+  * Green - Edit  
+  * Blue - Go back  
+  * Red - Delete  
+  ![buttons](docs/images/frontend/purple-blue-button.png)  
+  ![buttons](docs/images/frontend/green-red-button.png)
+
+### Typography
+
+For the site two different fonts were used. 
+
+* Amatic SC - This font utilises a Capitilised style and is used on the CritticWars website in most of their banners, making it a great choice to use for Titles in areas across the site.
+
+* Sans-Serif - The default Bootstrap font. The main CritticWars website utilises the condensed Roboto fornt due to its need to fit font into smaller boxes and narrow sidebars whilst also not being a truly full screen layout. For a more full screen design on DevBlog the standard bootstrap font offered excellent readability whilst also being somewhat close to the CritticWars font style so I saw no need to deviate from the default font. 
+
+## Agile Development Process
+
+I used GitHub projects to create User Storys and Bug cards and can be found on the [Git Hub Repository](https://github.com/gibbo101/critticwars-blog/projects/2)
+
+## Features
+
+### Navigation
+
+#### NavBar
+The nav bar allows the user to easily navigate around the site.
+
+* Logo: The logo on the nav bar features the CritticWars logo found on the main sites login page and provides a link back to the main site.  
+![logo](docs/images/frontend/cwlogo.webp)
 
 
+* Signed out
+  * When not signed out the user can see the following:
+    * Shows Logo (link to CritticWars)
+    * Shows link to Blogs (Home page)
+    * Shows Login link
+    * Shows Register link
+    * Shows Develper blog text  
+![nav logged out](docs/images/frontend/nav-logged-out.png)
 
+* Loggedin (standard user)
+  * When signed out the user can see the following:
+    * Shows Logo (link to CritticWars)
+    * Shows link to Blogs (Home page)
+    * Shows a drop down menu for user settings
+    * Shows a link to logout
+    * Shows Develper blog text  
+![nav logged in](docs/images/frontend/nav-logged-in.png)
+
+* Loggedin (Admin)
+ * Admin users can see all of the above but they also have another drop down menu for accessing the admin panel and creating a blog post
+![nav admin](docs/images/frontend/nav-admin.png)
+
+* Responsive Nav
+  * The Nav is fully responsive, collapsing down with a hamburger menu and displaying as block when the screen gets smaller  
+![nav responsive](docs/images/frontend/nav-responsive.png)  
+![nav responsive](docs/images/frontend/nav-responsive-open.png)  
+
+### Hero Image  
+To give a spice of identity and color to the pages, the background utilises a page spanning hero image of the CritticWars login pages.
+I wanted something that shouted to the users that this site was a part of CritticWars and the hero image is an iconic CritticWars background. 
+![hero image](docs/images/frontend/bg.webp)
