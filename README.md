@@ -169,15 +169,64 @@ Pagination appears on the Blog lists screen and on the comments list.
 
 
 ### Footer  
-Displays the link to the CritticWars facebook site as well as to the actual CritticWars site.
+Displays the link to the CritticWars facebook site as well as to the actual CritticWars site.  
 ![Footer](docs/images/frontend/footer.png)
 
-### 500 Server Error Page
+### Error pages
+I created a custom error page to pick up and 404 or 500 errors that users might get if trying to edit url to get to areas they shouldn't be in.  
+![Error Page](docs/images/frontend/errors.png)
+
+## Future Development
+
+ * Link the devblog to the main critticwars site and merge user accounts so no need to have seperate accounts
+ * Implement a feature rich editor for users to use when writing comments.
+ * Move creation of blog posts out of the admin panel and allow admins to edit / delete / create blog posts on the main site
+ * A notification for users to see if any new comments / blogs when they log in
+ * Like button to not refresh the page when clicked
+
+## Testing Phase
+All details of testing during and post-development can be found in a seperate file called [TESTING.MD](TESTING.MD)
+
+## Deployment
 
 
-### 404 Page Not Found
+## Technologies Used
+  * Python
+    * Installed packages for this project can be found in the [requirements.txt](rrequirements.txt) file
+  * Django
+    * Django was the framework used for the project. Django AllAuth was used to handle user authentication and related tasks such as logins and registration
+  * Heroku
+    * Used to deploy the live site and make it publicly available
+  * Heroku PostgreSQL
+    * The database used during development and deployment
+  * HTML
+    * The base language that made up the skeleton of all templates
+  * CSS
+    * Custom css was used to style the site to the correct color scheme and make the site look unique
+  * Javascript
+    * Whilst javascript wasn't used very much it was utilised to auto close flash messages when users completed tasks
+  * Jinja
+    * The templating language used to be able to insert logic from my views into my HTML structure.
+  * Bootstrap 5
+    * Used to style HTML and CSS to allow for rapid templating.
+  * Font Awesome
+    * For the Facebook, Like and Comments icons
+
+## With thanks
+  * [Richard Wells](https://github.com/D0nni387) - My mentor who helped guide me through my project and gave suggestions to push it that little bit further. Thanks!
 
 
-### Refs
+### Credits
+  * Balsamic was used to create the Wireframes
+  * Gitpod - Online IDE utilising VS code that was used to develop this project
+  * [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/) for checking colour contrast for my chosen color scheme
+  * [W3schools](https://www.w3schools.com) for general help when I became stuck
+  * [Stackoverflow](https://stackoverflow.com/) for when W3 schools failed me
+  * [LevelUp](https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317) for custom error pages
+  * [Django Documentation](https://docs.djangoproject.com/en/4.0/) for any Django related problems. Most notably using the Paginator
+  * [Bootstrap Documentation](https://getbootstrap.com/) for all Bootstrap issues
+  * [Code Institute Learning Platform](https://codeinstitute.net/) for reference to course material on how to build a Django app
+  * Fonts: Amatic SC was taken from [Google Fonts](https://fonts.google.com/specimen/Amatic+SC?query=amat) and the default font was the bootstrap default
 
-Custom Django error Pages: LevelUp(https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317)
+  #### images
+  All images were sourced from my website [critticwars.com](https://www.critticwars.com)
