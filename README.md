@@ -440,6 +440,7 @@ If you already have a [Heroku](https://id.heroku.com/login) account and are logg
   * [Bootstrap Documentation](https://getbootstrap.com/) for all Bootstrap issues
   * [Code Institute Learning Platform](https://codeinstitute.net/) for reference to course material on how to build a Django app
   * Fonts: Amatic SC was taken from [Google Fonts](https://fonts.google.com/specimen/Amatic+SC?query=amat) and the default font was the bootstrap default
+  * [https://github.com/dnlbowers/jobs-a-gooden](https://github.com/dnlbowers/jobs-a-gooden) used as a guide for deployment steps
 
 ### Images
 All images were sourced from my website [critticwars.com](https://www.critticwars.com)
