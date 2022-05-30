@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container accounts mt-3 p-3">
+    <h1 class="accounts-title">Oops! - What were you trying to do!?</h1>
+    You shouldnt be here! Did you get lost?
+    <a href="{% url 'home' %}">
+        <button type="button" class="mt-2 btn btn-primary w-100">Back to Home Page</button>
+    </a>
+</div>
+
+
+{%endblock%}

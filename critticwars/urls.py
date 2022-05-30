@@ -22,3 +22,6 @@ urlpatterns = [
     path('', include('devblog.urls'), name='blog_urls'),
     path('accounts/', include('allauth.urls'))
 ]
+
+handler404 = "devblog.views.page_not_found_view"
+handler500 = "devblog.views.error_500"

@@ -245,3 +245,18 @@ class Settings(View):
                 request,
                 messages.SUCCESS,
                 'User Settings Edited'))
+
+# Handle error pages
+
+def page_not_found_view(request, exception):
+    '''
+    Handle 404's
+    '''
+    return render(request, '404.html', status=404)
+
+
+def error_500(request,):
+    '''
+    Handle 500 errors
+    '''
+    return render(request, '404.html', status=500)
